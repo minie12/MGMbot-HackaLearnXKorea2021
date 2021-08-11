@@ -2,9 +2,12 @@
   <div class="wrapper">
     <p align="center">
 
-      <iframe
-          src='https://webchat.botframework.com/embed/trial0810?s=rz523UjS6Jg.B912gVkOIKg7isVBL_JwAiGAbJEHX0FCKwnQVImVHIk'
-          style='min-width: 400px; width: 800px; min-height: 700px;'></iframe>
+<!--      <iframe-->
+<!--          src='https://webchat.botframework.com/embed/trial0810?s=rz523UjS6Jg.B912gVkOIKg7isVBL_JwAiGAbJEHX0FCKwnQVImVHIk'-->
+<!--          style='min-width: 400px; width: 800px; min-height: 700px;'></iframe>-->
+
+      <iframe src='https://webchat.botframework.com/embed/MGMbot?s=1yJdze_CsLw.L2e0hOiGvlXoX9kkxVP-mNjjA9Wsp9uoqYyRVP89Hdc'
+              style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
 
     </p>
   </div>
