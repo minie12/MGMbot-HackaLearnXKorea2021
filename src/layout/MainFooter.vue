@@ -29,11 +29,11 @@
           </li>
         </ul>
       </nav>
-      <div class="copyright">
+      <p class="copyright">
         &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
         <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a>
         for a better web.
-      </div>
+      </p>
     </div>
   </footer>
 </template>

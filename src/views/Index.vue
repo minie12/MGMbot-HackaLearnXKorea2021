@@ -4,8 +4,9 @@
       <div class="md-layout">
         <div class="md-layout-item">
             <div class="brand">
-              <h1>Vue Material Kit</h1>
-              <h3>A Badass Vue.js UI Kit made with Material Design.</h3>
+              <h1>면</h1>허에 대해 <h1>궁</h1>금한 것을 <h1>물</h1>어보세요
+<!--              <h1>면 궁 물</h1> 에에-->
+              <h3>운전면허 궁금증 해결 챗봇 서비스</h3>
             </div>
         </div>
       </div>
@@ -41,7 +42,7 @@ export default {
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/vue-mk-header.jpg")
+      default: require("@/assets/img/night-view-3538984_1920.jpg")
     },
     leaf4: {
       type: String,
@@ -111,6 +112,16 @@ export default {
 };
 </script>
 <style lang="scss">
+
+div {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+p {
+  font-weight: normal;
+}
+
 .section-download {
   .md-button + .md-button {
     margin-left: 5px;
