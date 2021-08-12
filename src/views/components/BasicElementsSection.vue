@@ -1,15 +1,23 @@
 <template>
   <div class="wrapper">
-    <p align="center">
-
-<!--      <iframe-->
-<!--          src='https://webchat.botframework.com/embed/trial0810?s=rz523UjS6Jg.B912gVkOIKg7isVBL_JwAiGAbJEHX0FCKwnQVImVHIk'-->
-<!--          style='min-width: 400px; width: 800px; min-height: 700px;'></iframe>-->
-
-      <iframe src='https://webchat.botframework.com/embed/MGMbot?s=1yJdze_CsLw.L2e0hOiGvlXoX9kkxVP-mNjjA9Wsp9uoqYyRVP89Hdc'
-              style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
-
-    </p>
+    <div class="alert alert-warning">
+      <div class="container">
+        <button type="button" aria-hidden="true" class="close" @click="event => removeNotify(event,'alert-warning')">
+          <md-icon>clear</md-icon>
+        </button>
+        <div class="alert-icon">
+          <md-icon>warning</md-icon>
+        </div>
+        <b> 해상도 최적화 </b>
+        <p>
+            : 이 페이지는 PC 화면에 최적화 되어있습니다!
+            모바일에서는 화면 배치가 일부 맞지 않는 점 양해 바랍니다.
+        </p>
+      </div>
+    </div>
+      <iframe
+          src='https://webchat.botframework.com/embed/MGMbot?s=1yJdze_CsLw.L2e0hOiGvlXoX9kkxVP-mNjjA9Wsp9uoqYyRVP89Hdc'
+          style='min-width: 200px; width: 100%; min-height: 500px;'></iframe>
   </div>
 </template>
 
@@ -20,6 +28,15 @@ import { Badge } from "@/components";
 
 export default {
   components: {
+  },
+  methods: {
+    removeNotify(e, notifyClass) {
+      var target = e.target;
+      while (target.className.indexOf(notifyClass) === -1) {
+        target = target.parentNode;
+      }
+      return target.parentNode.removeChild(target);
+    }
   },
   data() {
     return {
