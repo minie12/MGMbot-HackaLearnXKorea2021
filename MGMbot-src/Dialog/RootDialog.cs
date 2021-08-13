@@ -36,7 +36,7 @@ namespace Microsoft.BotBuilderSamples.Dialog
             AddDialog(new ChoicePrompt(nameof(ChoicePrompt)));
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
-               IntroStepAsync, ActStepAsync
+               IntroStepAsync
             }));
 
             AddDialog(new WaterfallDialog(InitialDialog)
@@ -85,6 +85,7 @@ namespace Microsoft.BotBuilderSamples.Dialog
 
         private async Task<DialogTurnResult> InitialStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
+
             return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
         }
     }
