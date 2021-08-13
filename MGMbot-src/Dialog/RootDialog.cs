@@ -36,7 +36,7 @@ namespace Microsoft.BotBuilderSamples.Dialog
             AddDialog(new ChoicePrompt(nameof(ChoicePrompt)));
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
-                IntroStepAsync,
+                IntroStepAsync, ActStepAsync
             }));
 
             AddDialog(new WaterfallDialog(InitialDialog)
@@ -69,6 +69,16 @@ namespace Microsoft.BotBuilderSamples.Dialog
             var messageText = "";
             var promptMessage = MessageFactory.Text(messageText, messageText, InputHints.ExpectingInput);
             return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+        }
+
+        private async Task<DialogTurnResult> ActStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            //if ((string)stepContext.Result == "QUIZ")
+                return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
+/*            else
+            {
+                return await turnContext.SendActivityAsync(MessageFactory.Text($"Hello and welcome!"), cancellationToken);
+            }*/
         }
 
         private async Task<DialogTurnResult> InitialStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
