@@ -36,14 +36,14 @@ namespace Microsoft.BotBuilderSamples.Dialog
             AddDialog(new ChoicePrompt(nameof(ChoicePrompt)));
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
-                IntroStepAsync, ActStepAsync
+               IntroStepAsync, ActStepAsync
             }));
 
             AddDialog(new WaterfallDialog(InitialDialog)
                .AddStep(InitialStepAsync));
 
             // The initial child Dialog to run.
-            InitialDialogId = nameof(WaterfallDialog);
+            InitialDialogId = InitialDialog;
         }
 
 
@@ -54,12 +54,14 @@ namespace Microsoft.BotBuilderSamples.Dialog
                 Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1wU1TiDkOX54c_aeYEnOjNAzb0MB6JdoI") },
                 Buttons = new List<CardAction>()
                 {
-                    new CardAction(ActionTypes.ImBack, title: "헌혈 예약하기", value: "헌혈 예약하기"),
-                    new CardAction(ActionTypes.ImBack, title: "예약 확인·취소", value: "예약 확인·취소"),
+                    new CardAction(ActionTypes.ImBack, title: "시험장 장소", value: "시험장 장소"),
+                    new CardAction(ActionTypes.ImBack, title: "웹사이트", value: "웹사이트"),
                     new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA"),
                     new CardAction(ActionTypes.ImBack, title: "QUIZ", value: "QUIZ")
                 },
             };
+
+            await stepContext.Context.SendActivityAsync(MessageFactory.Text("무엇이든지 물어보세요!"), cancellationToken);
 
             var attachments = new List<Attachment>();
             var reply = MessageFactory.Attachment(attachments);
@@ -68,13 +70,13 @@ namespace Microsoft.BotBuilderSamples.Dialog
 
             var messageText = "";
             var promptMessage = MessageFactory.Text(messageText, messageText, InputHints.ExpectingInput);
-            return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+
+            return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
         }
 
         private async Task<DialogTurnResult> ActStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            //if ((string)stepContext.Result == "QUIZ")
-                return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
+            return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
 /*            else
             {
                 return await turnContext.SendActivityAsync(MessageFactory.Text($"Hello and welcome!"), cancellationToken);

@@ -40,11 +40,29 @@ namespace Microsoft.BotBuilderSamples.Bots
 
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
         {
+            // 봇 시작할때 카드 출력하기
+            var card = new HeroCard
+            {
+                Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1wU1TiDkOX54c_aeYEnOjNAzb0MB6JdoI") },
+                Buttons = new List<CardAction>()
+                {
+                    new CardAction(ActionTypes.ImBack, title: "시험장 장소", value: "시험장 장소"),
+                    new CardAction(ActionTypes.ImBack, title: "웹사이트", value: "웹사이트"),
+                    new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA"),
+                    new CardAction(ActionTypes.ImBack, title: "QUIZ", value: "QUIZ")
+                },
+            };
+
             foreach (var member in membersAdded)
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hello and welcome!"), cancellationToken);
+                    await turnContext.SendActivityAsync(MessageFactory.Text($"무엇이든지 물어보세요!"), cancellationToken);
+
+                    var attachments = new List<Attachment>();
+                    var reply = MessageFactory.Attachment(attachments);
+                    reply.Attachments.Add(card.ToAttachment());
+                    await turnContext.SendActivityAsync(reply, cancellationToken);
                 }
             }
         }
