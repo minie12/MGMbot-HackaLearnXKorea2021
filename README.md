@@ -1,6 +1,6 @@
 # MGM - 운전면허 궁금증 해결 챗봇 서비스
 
-![mgm-banner](.\Challenge\mgm-banner.png)
+![mgm-banner](Challenge/mgm-banner.png)
 
 - Demo: https://brave-tree-0cbae0d10.azurestaticapps.net/
 - [HackaLearn x Korea 2021](https://github.com/devrel-kr/HackaLearn) 참가 작품
