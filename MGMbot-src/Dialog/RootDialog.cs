@@ -12,7 +12,8 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs.Choices;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
-namespace Microsoft.BotBuilderSamples.Dialog
+
+namespace MGMbot
 {
     /// <summary>
     /// This is an example root dialog. Replace this with your applications.
@@ -28,22 +29,25 @@ namespace Microsoft.BotBuilderSamples.Dialog
         /// Initializes a new instance of the <see cref="RootDialog"/> class.
         /// </summary>
         /// <param name="services">Bot Services.</param>
-        public RootDialog(IBotServices services, IConfiguration configuration)
+        public RootDialog(IBotServices services, IConfiguration configuration, MapDialog mapDialog)
             : base("root")
         {
             AddDialog(new QnAMakerBaseDialog(services, configuration));
             AddDialog(new TextPrompt(nameof(TextPrompt)));
             AddDialog(new ChoicePrompt(nameof(ChoicePrompt)));
+            AddDialog(mapDialog);
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
-               IntroStepAsync
+               IntroStepAsync,
+               ActStepAsync,
+               FinalStepAsync,
+               ReturnStepAsync
             }));
 
-            AddDialog(new WaterfallDialog(InitialDialog)
-               .AddStep(InitialStepAsync));
+            // AddDialog(new WaterfallDialog(InitialDialog).AddStep(InitialStepAsync));
 
             // The initial child Dialog to run.
-            InitialDialogId = InitialDialog;
+            InitialDialogId = nameof(WaterfallDialog);
         }
 
 
@@ -70,22 +74,49 @@ namespace Microsoft.BotBuilderSamples.Dialog
             var messageText = "";
             var promptMessage = MessageFactory.Text(messageText, messageText, InputHints.ExpectingInput);
 
-            return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
+            return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+            //return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
         }
 
         private async Task<DialogTurnResult> ActStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
-/*            else
+            if ((string)stepContext.Result == $"시험장")
+            {   
+                return await stepContext.BeginDialogAsync(nameof(MapDialog), null, cancellationToken);
+            }
+            else
             {
-                return await turnContext.SendActivityAsync(MessageFactory.Text($"Hello and welcome!"), cancellationToken);
-            }*/
+                return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
+            }
         }
 
+        private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            return await stepContext.PromptAsync(nameof(ChoicePrompt),
+                new PromptOptions
+                {
+                    Choices = ChoiceFactory.ToChoices(new List<string> { "처음으로" }),
+                }, cancellationToken);
+        }
+
+        private async Task<DialogTurnResult> ReturnStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            return await stepContext.ReplaceDialogAsync(InitialDialogId, null, cancellationToken);
+        }
+/*
         private async Task<DialogTurnResult> InitialStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
 
             return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
-        }
+        }*/
+
+/*        // get QnA Answer
+        private async Task<DialogTurnResult> QnaAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            var response = await qnaMaker.GetAnswersAsync(stepContext);
+
+            // use answer found in qnaResults[0].answer
+            return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = MessageFactory.Text(response[0].Answer) }, cancellationToken);
+        }*/
     }
 }

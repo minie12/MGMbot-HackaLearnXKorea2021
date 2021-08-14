@@ -5,13 +5,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
-using Microsoft.BotBuilderSamples.Bots;
-using Microsoft.BotBuilderSamples.Dialog;
+//using Microsoft.BotBuilderSamples.Bots;
+//using Microsoft.BotBuilderSamples.Dialog;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Microsoft.BotBuilderSamples
+namespace MGMbot
 {
     public class Startup
     {
@@ -44,6 +44,8 @@ namespace Microsoft.BotBuilderSamples
 
             // The Dialog that will be run by the bot.
             services.AddSingleton<RootDialog>();
+
+            services.AddSingleton<MapDialog>();
 
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
             services.AddTransient<IBot, QnABot<RootDialog>>();
