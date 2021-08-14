@@ -55,9 +55,8 @@ namespace Microsoft.BotBuilderSamples.Dialog
                 Buttons = new List<CardAction>()
                 {
                     new CardAction(ActionTypes.ImBack, title: "시험장 장소", value: "시험장 장소"),
-                    new CardAction(ActionTypes.ImBack, title: "웹사이트", value: "웹사이트"),
-                    new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA"),
-                    new CardAction(ActionTypes.ImBack, title: "QUIZ", value: "QUIZ")
+                    new CardAction(ActionTypes.ImBack, title: "안전운전 통합민원 사이트", value: "웹사이트"),
+                    new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA")
                 },
             };
 
