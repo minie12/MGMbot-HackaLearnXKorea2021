@@ -21,10 +21,9 @@ namespace Microsoft.BotBuilderSamples.Bots
             Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1wU1TiDkOX54c_aeYEnOjNAzb0MB6JdoI") },
             Buttons = new List<CardAction>()
                 {
-                    new CardAction(ActionTypes.ImBack, title: "시험장 장소", value: "시험장 장소"),
-                    new CardAction(ActionTypes.ImBack, title: "웹사이트", value: "웹사이트"),
-                    new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA"),
-                    new CardAction(ActionTypes.ImBack, title: "QUIZ", value: "QUIZ")
+                    new CardAction(ActionTypes.ImBack, title: "시험장", value: "시험장"),
+                    new CardAction(ActionTypes.ImBack, title: "안전운전 통합민원 사이트", value: "안전운전 웹사이트"),
+                    new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA")
                 },
         };
 
@@ -62,15 +61,16 @@ namespace Microsoft.BotBuilderSamples.Bots
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             var replyText = $"{turnContext.Activity.Text}";
-            if(replyText == $"메뉴")
+            if (replyText == $"메뉴")
             {
                 await printMenu(turnContext, cancellationToken);
 
             }
-            
-
-            // Run the Dialog with the new message Activity.
-            await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
+            else
+            {
+                // Run the Dialog with the new message Activity.
+                await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
+            }
         }
 
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)

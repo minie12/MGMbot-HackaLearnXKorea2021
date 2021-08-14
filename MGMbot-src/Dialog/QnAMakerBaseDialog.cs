@@ -36,11 +36,13 @@ namespace Microsoft.BotBuilderSamples.Dialog
             this._configuration = configuration;
         }
 
+        // Gets an IQnaMAkerClient to use to access the QnA Maker knowledge base
         protected async override Task<IQnAMakerClient> GetQnAMakerClientAsync(DialogContext dc)
         {
             return this._services?.QnAMakerService;
         }
 
+        // Gets the options for the QnAMaker client that the dialog will use to query the knowledge base
         protected override Task<QnAMakerOptions> GetQnAMakerOptionsAsync(DialogContext dc)
         {
             return Task.FromResult(new QnAMakerOptions
@@ -53,6 +55,7 @@ namespace Microsoft.BotBuilderSamples.Dialog
             });
         }
 
+        // Gets the options the dialog will use to display query results to the user
         protected async override Task<QnADialogResponseOptions> GetQnAResponseOptionsAsync(DialogContext dc)
         {
             var noAnswer = (Activity)Activity.CreateMessageActivity();
