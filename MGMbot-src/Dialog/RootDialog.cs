@@ -54,8 +54,8 @@ namespace Microsoft.BotBuilderSamples.Dialog
                 Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1wU1TiDkOX54c_aeYEnOjNAzb0MB6JdoI") },
                 Buttons = new List<CardAction>()
                 {
-                    new CardAction(ActionTypes.ImBack, title: "시험장 장소", value: "시험장 장소"),
-                    new CardAction(ActionTypes.ImBack, title: "안전운전 통합민원 사이트", value: "웹사이트"),
+                    new CardAction(ActionTypes.ImBack, title: "시험장", value: "시험장"),
+                    new CardAction(ActionTypes.ImBack, title: "안전운전 통합민원 사이트", value: "안전운전 웹사이트"),
                     new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA")
                 },
             };
