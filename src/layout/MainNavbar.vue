@@ -51,10 +51,10 @@
                         </li>
                         <li>
                           <a
-                            href="https://demos.creative-tim.com/vue-material-kit/documentation/"
+                            href="https://github.com/solidcellaMoon/chat-web-frame"
                           >
-                            <i class="material-icons">content_paste</i>
-                            <p>Documentation</p>
+                            <i class="fab fa-github"></i>
+                            <p>Github</p>
                           </a>
                         </li>
                       </ul>
@@ -64,21 +64,15 @@
               </li>
 
               <md-list-item
-                href="https://demos.creative-tim.com/vue-material-kit/documentation/"
+                href="https://github.com/solidcellaMoon/chat-web-frame"
                 target="_blank"
                 v-if="showDownload"
               >
-                <i class="material-icons">content_paste</i>
-                <p>Documentation</p>
-              </md-list-item>
-
-              <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="showDownload"
-              >
-                <i class="material-icons">cloud_download</i>
-                <p>Download</p>
+                <i class="fab fa-github"></i>
+                <p>Github</p>
+                <md-tooltip md-direction="bottom"
+                >Github 저장소</md-tooltip
+                >
               </md-list-item>
 
               <li class="md-list-item" v-else>
@@ -96,59 +90,30 @@
                         <i class="material-icons">view_carousel</i>
                         <p>Examples</p>
                       </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <a href="#/landing">
-                            <i class="material-icons">view_day</i>
-                            <p>Landing Page</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#/login">
-                            <i class="material-icons">fingerprint</i>
-                            <p>Login Page</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#/profile">
-                            <i class="material-icons">account_circle</i>
-                            <p>Profile Page</p>
-                          </a>
-                        </li>
-                      </ul>
                     </drop-down>
                   </div>
                 </a>
               </li>
 
               <md-list-item
-                href="https://twitter.com/CreativeTim"
+                href="https://github.com/devrel-kr/HackaLearn/blob/main/teams/KING.md"
                 target="_blank"
               >
-                <i class="fab fa-twitter"></i>
-                <p class="hidden-lg">Twitter</p>
+                <i class="material-icons">content_paste</i>
+                <p>About us</p>
                 <md-tooltip md-direction="bottom"
-                  >Follow us on Twitter</md-tooltip
+                  >개발팀 KING에 대하여</md-tooltip
                 >
               </md-list-item>
+
               <md-list-item
-                href="https://www.facebook.com/CreativeTim"
-                target="_blank"
+                  href="https://www.youtube.com/"
+                  target="_blank"
               >
-                <i class="fab fa-facebook-square"></i>
-                <p class="hidden-lg">Facebook</p>
+                <i class="fab fa-youtube"></i>
+                <p>youtube</p>
                 <md-tooltip md-direction="bottom"
-                  >Like us on Facebook</md-tooltip
-                >
-              </md-list-item>
-              <md-list-item
-                href="https://www.instagram.com/CreativeTimOfficial"
-                target="_blank"
-              >
-                <i class="fab fa-instagram"></i>
-                <p class="hidden-lg">Instagram</p>
-                <md-tooltip md-direction="bottom"
-                  >Follow us on Instagram</md-tooltip
+                >시연 영상</md-tooltip
                 >
               </md-list-item>
             </md-list>
