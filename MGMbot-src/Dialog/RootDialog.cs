@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.AI.QnA.Dialogs;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Extensions.Configuration;
-
 using System.Collections.Generic;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs.Choices;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
 
-namespace MGMbot
+namespace MGMbot.Dialog
 {
     /// <summary>
     /// This is an example root dialog. Replace this with your applications.
@@ -49,7 +48,6 @@ namespace MGMbot
             // The initial child Dialog to run.
             InitialDialogId = nameof(WaterfallDialog);
         }
-
 
         private async Task<DialogTurnResult> IntroStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {

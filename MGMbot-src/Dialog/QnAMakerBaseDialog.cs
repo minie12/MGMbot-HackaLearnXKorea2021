@@ -9,7 +9,7 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Configuration;
 
-namespace MGMbot
+namespace MGMbot.Dialog
 {
     /// <summary>
     /// QnAMaker action builder class

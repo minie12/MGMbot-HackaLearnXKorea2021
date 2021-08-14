@@ -5,11 +5,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
-//using Microsoft.BotBuilderSamples.Bots;
-//using Microsoft.BotBuilderSamples.Dialog;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
+using MGMbot.Dialog;
+using MGMbot.Bots;
 
 namespace MGMbot
 {
