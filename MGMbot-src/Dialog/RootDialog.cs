@@ -58,11 +58,9 @@ namespace MGMbot.Dialog
                 {
                     new CardAction(ActionTypes.ImBack, title: "시험장", value: "시험장"),
                     new CardAction(ActionTypes.ImBack, title: "안전운전 통합민원 사이트", value: "안전운전 웹사이트"),
-                    new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA")
+                    new CardAction(ActionTypes.ImBack, title: "QnA 사용 방법", value: "QnA 사용 방법")
                 },
             };
-
-            await stepContext.Context.SendActivityAsync(MessageFactory.Text("무엇이든지 물어보세요!"), cancellationToken);
 
             var attachments = new List<Attachment>();
             var reply = MessageFactory.Attachment(attachments);
@@ -71,6 +69,10 @@ namespace MGMbot.Dialog
 
             var messageText = "";
             var promptMessage = MessageFactory.Text(messageText, messageText, InputHints.ExpectingInput);
+
+            await stepContext.Context.SendActivityAsync(MessageFactory.Text($"안녕하세요, MGM 챗봇 서비스입니다.\r\n" +
+                        $"운전면허에 대해 궁금하신 내용을 질문해주세요."), cancellationToken);
+
 
             return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
             //return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);

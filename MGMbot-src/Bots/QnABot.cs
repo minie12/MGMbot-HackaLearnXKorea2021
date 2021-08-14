@@ -23,7 +23,7 @@ namespace MGMbot.Bots
                 {
                     new CardAction(ActionTypes.ImBack, title: "시험장", value: "시험장"),
                     new CardAction(ActionTypes.ImBack, title: "안전운전 통합민원 사이트", value: "안전운전 웹사이트"),
-                    new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA")
+                    new CardAction(ActionTypes.ImBack, title: "QnA 사용 방법", value: "QnA 사용 방법")
                 },
         };
 
@@ -80,8 +80,10 @@ namespace MGMbot.Bots
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"안녕하세요, MGM 챗봇 서비스입니다.\r\n" +
-                        $"운전면허에 대해 궁금하신 내용을 질문해주세요."), cancellationToken);
+                    //await turnContext.SendActivityAsync(MessageFactory.Text($"안녕하세요, MGM 챗봇 서비스입니다.\r\n" + $"운전면허에 대해 궁금하신 내용을 질문해주세요."), cancellationToken);
+                    
+                    // 바로 메뉴 띄우기
+                    await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
                     //await printMenu(turnContext, cancellationToken);
                 }
             }
