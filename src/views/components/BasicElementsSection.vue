@@ -17,7 +17,7 @@
     </div>
       <iframe
           src='https://webchat.botframework.com/embed/MGMbot?s=1yJdze_CsLw.L2e0hOiGvlXoX9kkxVP-mNjjA9Wsp9uoqYyRVP89Hdc'
-          style='min-width: 200px; width: 100%; min-height: 500px;'></iframe>
+          style='min-width: 200px; width: 100%; min-height: 800px;'></iframe>
   </div>
 </template>
 

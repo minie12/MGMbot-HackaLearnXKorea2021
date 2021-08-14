@@ -10,37 +10,12 @@ import MainFooter from "./layout/MainFooter.vue";
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: "/",
       name: "index",
       components: { default: Index, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
-    },
-    {
-      path: "/landing",
-      name: "landing",
-      components: { default: Landing, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
-    },
-    {
-      path: "/login",
-      name: "login",
-      components: { default: Login, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 }
-      }
-    },
-    {
-      path: "/profile",
-      name: "profile",
-      components: { default: Profile, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }
