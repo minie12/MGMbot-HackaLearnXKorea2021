@@ -18,7 +18,7 @@ namespace Microsoft.BotBuilderSamples.Bots
         // 봇 시작할때 카드 출력하기
         HeroCard card = new HeroCard
         {
-            Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1wU1TiDkOX54c_aeYEnOjNAzb0MB6JdoI") },
+            Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1HrqzgfF6SQTE13NkKn-hLLeRqA389q-_") },
             Buttons = new List<CardAction>()
                 {
                     new CardAction(ActionTypes.ImBack, title: "시험장", value: "시험장"),
@@ -50,12 +50,13 @@ namespace Microsoft.BotBuilderSamples.Bots
         // d예아`~~!!@!@
         protected async Task printMenu(ITurnContext turnContext, CancellationToken cancellationToken)
         {
-            await turnContext.SendActivityAsync(MessageFactory.Text($"무엇이든지 물어보세요!"), cancellationToken);
-
             var attachments = new List<Attachment>();
             var reply = MessageFactory.Attachment(attachments);
             reply.Attachments.Add(card.ToAttachment());
             await turnContext.SendActivityAsync(reply, cancellationToken);
+
+            await turnContext.SendActivityAsync(MessageFactory.Text($"메뉴를 다시 보고 싶으시면\r\n" +
+                $"메뉴 라고 말씀해주세요."), cancellationToken);
         }
 
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -80,6 +81,8 @@ namespace Microsoft.BotBuilderSamples.Bots
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
+                    await turnContext.SendActivityAsync(MessageFactory.Text($"안녕하세요, MGM 챗봇 서비스입니다.\r\n" +
+                        $"운전면허에 대해 궁금하신 내용을 질문해주세요."), cancellationToken);
                     await printMenu(turnContext, cancellationToken);
                 }
             }

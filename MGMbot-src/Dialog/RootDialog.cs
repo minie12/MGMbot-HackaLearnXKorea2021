@@ -51,7 +51,7 @@ namespace Microsoft.BotBuilderSamples.Dialog
         {
             var card = new HeroCard
             {
-                Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1wU1TiDkOX54c_aeYEnOjNAzb0MB6JdoI") },
+                Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1HrqzgfF6SQTE13NkKn-hLLeRqA389q-_") },
                 Buttons = new List<CardAction>()
                 {
                     new CardAction(ActionTypes.ImBack, title: "시험장", value: "시험장"),

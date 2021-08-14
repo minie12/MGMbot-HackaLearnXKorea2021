@@ -20,3 +20,15 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# bot ignore
+*.dll
+*.pdb
+obj/**
+bin/**
+runtimes/**
+*.user
+*.PublishSettings
+publish.cmd
+packages/
+.vs/
