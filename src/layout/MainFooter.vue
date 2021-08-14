@@ -8,31 +8,20 @@
       <nav>
         <ul>
           <li>
-            <a href="https://www.creative-tim.com">
-              Creative Tim
+            <a href="https://github.com/solidcellaMoon/chat-web-frame">
+              Github
             </a>
           </li>
           <li>
-            <a href="https:///presentation.creative-tim.com">
+            <a href="https://github.com/devrel-kr/HackaLearn/blob/main/teams/KING.md">
               About Us
-            </a>
-          </li>
-          <li>
-            <a href="https:///blog.creative-tim.com">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/license">
-              Licenses
             </a>
           </li>
         </ul>
       </nav>
       <p class="copyright">
-        &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
-        <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a>
-        for a better web.
+        <md-icon>computer</md-icon> {{ year }}, made by
+        <a href="https://github.com/devrel-kr/HackaLearn/blob/main/teams/KING.md" target="_blank">Team: KING</a>
       </p>
     </div>
   </footer>
