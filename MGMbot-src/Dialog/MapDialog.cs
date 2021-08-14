@@ -80,21 +80,21 @@ namespace MGMbot.Dialog
             {
                 cards.Add(MakeMapCards("강남면허시험장", 37.5083183, 127.0651209, "서울특별시 강남구 대치동 테헤란로114길 23").ToAttachment());
                 cards.Add(MakeMapCards("강서면허시험장", 37.5501788, 126.8196349, "서울특별시 강서구 외발산동 남부순환로 171").ToAttachment());
-                cards.Add(MakeMapCards("도봉면허시험장", 37.6582111, 127.0565395, "서울특별시 노원구 상계동 동일로 1449").ToAttachment());
+                cards.Add(MakeMapCards("도봉면허시험장", 37.6582111, 127.0565395, "서울특별시 노원구 상계동 동일로 1449\r\n").ToAttachment());
                 cards.Add(MakeMapCards("서부면허시험장", 37.5792537, 126.8778281, "서울특별시 마포구 상암동 월드컵로42길 13").ToAttachment());
             }
 
             else if ((string)stepContext.Values["center1"] == "부산")
             {
-                cards.Add(MakeMapCards("부산남부면허시험장", 35.1269225, 129.105866, "부산광역시 남구 용호1동 용호로 16").ToAttachment());
+                cards.Add(MakeMapCards("부산남부면허시험장", 35.1269225, 129.105866, "부산광역시 남구 용호1동 용호로 16\r\n  ").ToAttachment());
                 cards.Add(MakeMapCards("부산북부면허시험장", 35.1775595, 128.981102, "부산광역시 사상구 덕포동 사상로367번길 35").ToAttachment());
             }
 
             else if ((string)stepContext.Values["center1"] == "경기")
             {
                 cards.Add(MakeMapCards("용인면허시험장", 37.2894685, 127.1057513, "경기도 용인시 기흥구 용구대로 2267").ToAttachment());
-                cards.Add(MakeMapCards("안산면허시험장", 37.3454366, 126.8263053, "경기도 안산시 단원구 순환로 352").ToAttachment());
-                cards.Add(MakeMapCards("의정부면허시험장", 37.7593117, 127.0757833, "경기도 의정부시 금오로109번길 55").ToAttachment());
+                cards.Add(MakeMapCards("안산면허시험장", 37.3454366, 126.8263053, "경기도 안산시 단원구 순환로 352 \r\n").ToAttachment());
+                cards.Add(MakeMapCards("의정부면허시험장", 37.7593117, 127.0757833, "경기도 의정부시 금오로 109번길 55\r\n  ").ToAttachment());
             }
 
             else if ((string)stepContext.Values["center1"] == "강원")
@@ -102,27 +102,27 @@ namespace MGMbot.Dialog
                 cards.Add(MakeMapCards("춘천면허시험장", 37.9470965, 127.748418, "강원도 춘천시 신북읍 신북로 247").ToAttachment());
                 cards.Add(MakeMapCards("강릉면허시험장", 37.7953524, 128.8166345, "강원도 강릉시 사천면 중앙서로 464").ToAttachment());
                 cards.Add(MakeMapCards("원주면허시험장", 37.3383034, 127.8962993, "강원도 원주시 호저면 사제로 596").ToAttachment());
-                cards.Add(MakeMapCards("태백면허시험장", 37.1809663, 128.9682463, "강원도 태백시 수아밭길 166").ToAttachment());
+                cards.Add(MakeMapCards("태백면허시험장", 37.1809663, 128.9682463, "강원도 태백시 수아밭길 166\r\n").ToAttachment());
             }
 
             else if ((string)stepContext.Values["center1"] == "전라")
             {
                 cards.Add(MakeMapCards("전북면허시험장", 35.8623954, 127.0684835, "전라북도 전주시 덕진구 팔복로 359").ToAttachment());
-                cards.Add(MakeMapCards("전남면허시험장", 35.0084324, 126.703068, "전라남도 나주시 내영산2길 49").ToAttachment());
+                cards.Add(MakeMapCards("전남면허시험장", 35.0084324, 126.703068, "전라남도 나주시 내영산2길 49\r\n ").ToAttachment());
                 cards.Add(MakeMapCards("광양면허시험장", 34.9613622, 127.5696968, "전라남도 광양시 광양읍 대학로 11").ToAttachment());
             }
 
             else if ((string)stepContext.Values["center1"] == "충청")
             {
                 cards.Add(MakeMapCards("청주면허시험장", 36.5768403, 127.565366, "충청북도 청주시 상당구 가덕면 교육원로 131-20").ToAttachment());
-                cards.Add(MakeMapCards("충주면허시험장", 36.9389417, 127.8956336, "충청북도 충주시 달천동 대가주1길 16").ToAttachment());
-                cards.Add(MakeMapCards("예산면허시험장", 36.6727236, 126.7858517, "충청남도 예산군 오가면 국사봉로 500").ToAttachment());
+                cards.Add(MakeMapCards("충주면허시험장", 36.9389417, 127.8956336, "충청북도 충주시 달천동 대가주1길 16\r\n     ").ToAttachment());
+                cards.Add(MakeMapCards("예산면허시험장", 36.6727236, 126.7858517, "충청남도 예산군 오가면 국사봉로 500\r\n     ").ToAttachment());
             }
 
             else if ((string)stepContext.Values["center1"] == "경상")
             {
-                cards.Add(MakeMapCards("문경면허시험장", 36.6369607, 128.1713829, "경상북도 문경시 점촌4동 신기공단1길 12").ToAttachment());
-                cards.Add(MakeMapCards("포항면허시험장", 36.6369607, 129.3907099, "경상북도 포항시 남구 오천읍 냉천로 656").ToAttachment());
+                cards.Add(MakeMapCards("문경면허시험장", 36.6369607, 128.1713829, "경상북도 문경시 점촌4동 신기공단1길 12\r\n      ").ToAttachment());
+                cards.Add(MakeMapCards("포항면허시험장", 36.6369607, 129.3907099, "경상북도 포항시 남구 오천읍 냉천로 656\r\n      ").ToAttachment());
                 cards.Add(MakeMapCards("마산면허시험장", 35.1245401, 128.4853692, "경상남도 창원시 마산합포구 진동면 진북산업로 90-1").ToAttachment());
             }
 
@@ -156,9 +156,9 @@ namespace MGMbot.Dialog
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
             await stepContext.Context.SendActivityAsync(reply, cancellationToken);
 
-            var messageText = "";
-            var promptMessage = MessageFactory.Text(messageText, messageText, InputHints.ExpectingInput);
-            return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+            await stepContext.Context.SendActivityAsync(MessageFactory.Text($"확인하셨다면 아무 말이나 입력해주세요."), cancellationToken);
+
+            return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = null }, cancellationToken);
         }
 
         private static HeroCard MakeMapCards(string name, double latitude, double longitude, string address)
@@ -166,10 +166,8 @@ namespace MGMbot.Dialog
             HeroCard card = new HeroCard(
                             title: name,
                             images: new CardImage[] { new CardImage() { Url = MakeMap(latitude, longitude) } },
-        tap: new CardAction() { Value = $"http://maps.google.com/maps?q={ latitude},{longitude}", Type = "openUrl", },
-                            text: address,
-                            buttons: new List<CardAction>
-                            {new CardAction(ActionTypes.PostBack, title: "선택", value: name)}
+                            tap: new CardAction() { Value = $"http://maps.google.com/maps?q={ latitude},{longitude}", Type = "openUrl", },
+                            text: address
                             );
 
             return card;
