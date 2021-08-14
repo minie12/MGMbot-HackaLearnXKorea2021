@@ -54,23 +54,20 @@ namespace MGMbot.Bots
             var reply = MessageFactory.Attachment(attachments);
             reply.Attachments.Add(card.ToAttachment());
             await turnContext.SendActivityAsync(reply, cancellationToken);
-
-            await turnContext.SendActivityAsync(MessageFactory.Text($"메뉴를 다시 보고 싶으시면\r\n" +
-                $"메뉴 라고 말씀해주세요."), cancellationToken);
         }
 
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            var replyText = $"{turnContext.Activity.Text}";
+            /*var replyText = $"{turnContext.Activity.Text}";
             if (replyText == $"메뉴")
             {
                 await printMenu(turnContext, cancellationToken);
             }
             else
-            {
+            {*/
                 // Run the Dialog with the new message Activity.
-                await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
-            }
+            await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
+            //}
         }
 
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)

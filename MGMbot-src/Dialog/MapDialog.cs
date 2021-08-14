@@ -156,9 +156,7 @@ namespace MGMbot.Dialog
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
             await stepContext.Context.SendActivityAsync(reply, cancellationToken);
 
-            await stepContext.Context.SendActivityAsync(MessageFactory.Text($"확인하셨다면 아무 말이나 입력해주세요."), cancellationToken);
-
-            return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = null }, cancellationToken);
+            return await stepContext.ContinueDialogAsync();
         }
 
         private static HeroCard MakeMapCards(string name, double latitude, double longitude, string address)

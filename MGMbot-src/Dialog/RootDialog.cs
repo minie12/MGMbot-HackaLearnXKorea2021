@@ -23,18 +23,20 @@ namespace MGMbot.Dialog
         /// QnA Maker initial dialog
         /// </summary>
         private const string InitialDialog = "initial-dialog";
+        private string MenuChoice = "";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RootDialog"/> class.
         /// </summary>
         /// <param name="services">Bot Services.</param>
-        public RootDialog(IBotServices services, IConfiguration configuration, MapDialog mapDialog)
+        public RootDialog(IBotServices services, IConfiguration configuration, MapDialog mapDialog, QDialog qDialog)
             : base("root")
         {
             AddDialog(new QnAMakerBaseDialog(services, configuration));
             AddDialog(new TextPrompt(nameof(TextPrompt)));
             AddDialog(new ChoicePrompt(nameof(ChoicePrompt)));
             AddDialog(mapDialog);
+            AddDialog(qDialog);
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
                IntroStepAsync,
@@ -80,23 +82,45 @@ namespace MGMbot.Dialog
 
         private async Task<DialogTurnResult> ActStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
+            MenuChoice = (string)stepContext.Result;
+
             if ((string)stepContext.Result == $"시험장")
             {   
                 return await stepContext.BeginDialogAsync(nameof(MapDialog), null, cancellationToken);
             }
-            else
+            else if ((string)stepContext.Result == $"안전운전 웹사이트")
             {
                 return await stepContext.BeginDialogAsync(nameof(QnAMakerDialog), null, cancellationToken);
+            }
+            else
+            {
+                await stepContext.Context.SendActivityAsync(MessageFactory.Text($"저희 서비스가 주로 제공하는 내용은 다음과 같습니다.\r\n" +
+                        $"- 시험순서, 수수료 \r\n- 시험 통과 기준 \r\n- 시험장 위치 \r\n- 기타 지식"), cancellationToken);
+
+                await stepContext.Context.SendActivityAsync(MessageFactory.Text($"이런 식으로 질문해보세요!\r\n" +
+                        $"- 서울에 있는 시험장 어디야? \r\n" +
+                        $"- 기능시험 실격 기준이 뭐야? \r\n" +
+                        $"- 스쿠터 면허는 어떤 종류야? \r\n" +
+                        $"- 학과시험 수수료 얼마야?"), cancellationToken);
+
+                await stepContext.Context.SendActivityAsync(MessageFactory.Text($"메뉴를 다시 보고 싶으시면 \"메뉴\" 라고 입력해주세요."), cancellationToken);
+
+                return await stepContext.BeginDialogAsync(nameof(QDialog), null, cancellationToken);
             }
         }
 
         private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            return await stepContext.PromptAsync(nameof(ChoicePrompt),
-                new PromptOptions
-                {
-                    Choices = ChoiceFactory.ToChoices(new List<string> { "처음으로" }),
-                }, cancellationToken);
+            if (MenuChoice == "시험장" || MenuChoice == "안전운전 웹사이트")
+            {
+                return await stepContext.PromptAsync(nameof(ChoicePrompt),
+                    new PromptOptions
+                    {
+                        Choices = ChoiceFactory.ToChoices(new List<string> { "처음으로" }),
+                    }, cancellationToken);
+            }
+            else
+                return await stepContext.ContinueDialogAsync();
         }
 
         private async Task<DialogTurnResult> ReturnStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
