@@ -10,7 +10,7 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 
-namespace Microsoft.BotBuilderSamples.Bots
+namespace MGMbot.Bots
 {
     public class QnABot<T> : ActivityHandler where T : Microsoft.Bot.Builder.Dialogs.Dialog
     {
@@ -65,7 +65,6 @@ namespace Microsoft.BotBuilderSamples.Bots
             if (replyText == $"메뉴")
             {
                 await printMenu(turnContext, cancellationToken);
-
             }
             else
             {
@@ -83,7 +82,7 @@ namespace Microsoft.BotBuilderSamples.Bots
                 {
                     await turnContext.SendActivityAsync(MessageFactory.Text($"안녕하세요, MGM 챗봇 서비스입니다.\r\n" +
                         $"운전면허에 대해 궁금하신 내용을 질문해주세요."), cancellationToken);
-                    await printMenu(turnContext, cancellationToken);
+                    //await printMenu(turnContext, cancellationToken);
                 }
             }
         }

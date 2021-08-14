@@ -1,0 +1,24 @@
+﻿{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "시간을 선택해주세요."
+    },
+    {
+      "type": "Input.Time",
+      "id": "time",
+      "min": "08:00",
+      "max": "20:00",
+      "value": "15:30"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "OK"
+    }
+  ]
+}
