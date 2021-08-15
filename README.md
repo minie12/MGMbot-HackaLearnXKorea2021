@@ -2,9 +2,9 @@
 
 ![mgm-banner](Challenge/MGM-Banner.png)
 
-- **Demo Page:** https://brave-tree-0cbae0d10.azurestaticapps.net/
 - [HackaLearn x Korea 2021](https://github.com/devrel-kr/HackaLearn) 참가 작품
-
+- **Demo Page:** https://brave-tree-0cbae0d10.azurestaticapps.net/
+- **Demo Video:** https://youtu.be/f7-GkbOhVGE
 
 
 #### Index
@@ -14,8 +14,6 @@
 - [로컬에서 실행하기](#로컬-환경에서-설치--실행)
 - [Azure로 배포하기](#Azure-Portal로-배포하기)
 - [팀 멤버](#Team)
-
-
 
 
 

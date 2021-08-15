@@ -108,11 +108,11 @@
               </md-list-item>
 
               <md-list-item
-                  href="https://www.youtube.com/"
+                  href="https://youtu.be/f7-GkbOhVGE"
                   target="_blank"
               >
                 <i class="fab fa-youtube"></i>
-                <p>youtube</p>
+                <p>Demo Video</p>
                 <md-tooltip md-direction="bottom"
                 >시연 영상</md-tooltip
                 >
