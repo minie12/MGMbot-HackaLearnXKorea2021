@@ -31,7 +31,7 @@ Azure Static Web Apps를 통해 편리하게 배포해보자!
 ```
 
 - `Azure Bot Service`를 이용해 운전면허 Q&A 챗봇 서비스를 개발했습니다.
-- 개발 과정에서 `Microsoft Docs`의 문서와 `sample GitHub Repository`를 적극 참고했습니다.
+- 개발 과정에서 `Microsoft Docs`의 문서와 `ample GitHub Repository`를 적극 참고했습니다.
 - 완성된 챗봇을 `Vue.js` 프로젝트에 삽입하여, 웹 환경에서 실행되는 챗봇을 구현했습니다.
 - 마지막으로, 빌드 및 배포는 `Azure Static Web Apps와 GitHub Actions`를 통해 자동화했습니다.
 - 즉, MGM 프로젝트는 이 저장소에 새 버전이 나올 때마다 웹으로 자동적으로 배포됩니다! 👏
