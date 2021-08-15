@@ -48,12 +48,14 @@
 
 #### 아래 사항이 준비되었는지 확인해주세요.
 
-- [MGM 프로젝트 저장소](https://github.com/solidcellaMoon/MGMbot-HackaLearnXKorea2021)를 `fork`한 Github Repository
-  
+- **[MGM 프로젝트 저장소](https://github.com/solidcellaMoon/MGMbot-HackaLearnXKorea2021)를 `fork`한 Github Repository**
   - `fork`한 저장소의 링크는 아래의 형식과 같습니다.
-  - `https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021`
-  
-- 최신 버전의 [Node.js](https://nodejs.org/ko/download/)
+
+```
+https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021
+```
+
+- **최신 버전의 [Node.js](https://nodejs.org/ko/download/)**
 
   - cmd창에서 npm 명령어가 정상적으로 실행되어야 합니다.
 
