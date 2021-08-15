@@ -53,9 +53,9 @@ namespace MGMbot.Dialog
                 Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1HrqzgfF6SQTE13NkKn-hLLeRqA389q-_") },
                 Buttons = new List<CardAction>()
                 {
-                    new CardAction(ActionTypes.ImBack, title: "시험장", value: "시험장"),
                     new CardAction(ActionTypes.ImBack, title: "안전운전 통합민원 사이트", value: "안전운전 웹사이트"),
-                    new CardAction(ActionTypes.ImBack, title: "QnA 사용 방법", value: "QnA 사용 방법")
+                    new CardAction(ActionTypes.ImBack, title: "운전면허 시험장 위치", value: "시험장"),
+                    new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA")
                 },
             };
 
@@ -85,10 +85,9 @@ namespace MGMbot.Dialog
             else
             {
                 await stepContext.Context.SendActivityAsync(MessageFactory.Text($"저희 서비스가 주로 제공하는 내용은 다음과 같습니다.\r\n" +
-                        $"- 시험순서, 수수료 \r\n- 시험 통과 기준 \r\n- 시험장 위치 \r\n- 기타 지식"), cancellationToken);
+                        $"- 시험 순서 \r\n- 수수료 \r\n- 시험 통과 기준 \r\n- 기타 지식"), cancellationToken);
 
                 await stepContext.Context.SendActivityAsync(MessageFactory.Text($"이런 식으로 질문해보세요!\r\n" +
-                        $"- 서울에 있는 시험장 어디야? \r\n" +
                         $"- 기능시험 실격 기준이 뭐야? \r\n" +
                         $"- 스쿠터 면허는 어떤 종류야? \r\n" +
                         $"- 학과시험 수수료 얼마야?"), cancellationToken);
