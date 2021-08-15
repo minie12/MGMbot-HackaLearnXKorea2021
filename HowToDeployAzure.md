@@ -1,4 +1,4 @@
-# Azure Portal로 배포하기
+# 📝Azure Portal로 배포하기
 
 **본 프로젝트는 [Azure Static Web Apps](https://aka.ms/hackalearn/aswa/intro)를 통해 배포되었습니다.**
 
@@ -6,7 +6,7 @@
 
 
 
-## 사전 준비 사항
+## ✍️사전 준비 사항
 
 - **[Azure Trial 이상의 구독을 가진 Azure 계정](https://azure.microsoft.com/ko-kr/free/)**
 
@@ -20,7 +20,7 @@ https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021
 
 
 
-## Azure Static Web Apps 배포하기
+## ✍️Azure Static Web Apps 배포하기
 
 1. [Azure Portal](https://portal.azure.com/#home)에 접속합니다.
 2. **리소스 만들기** 를 클릭합니다.

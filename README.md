@@ -1,17 +1,70 @@
-# MGM - 운전면허 궁금증 해결 챗봇 서비스
+# 🚘MGM - 운전면허 궁금증 해결 챗봇 서비스
 
 ![mgm-banner](Challenge/MGM-Banner.png)
 
-- Demo Page: https://brave-tree-0cbae0d10.azurestaticapps.net/
+- **Demo Page:** https://brave-tree-0cbae0d10.azurestaticapps.net/
 - [HackaLearn x Korea 2021](https://github.com/devrel-kr/HackaLearn) 참가 작품
 
 
 
-## 사용 기술 & 개발 환경
+#### Index
+
+- [개발 배경](#🚘개발-배경)
+- [사용 기술 및 개발 환경](#🚘사용-기술-개발-환경)
+- [로컬에서 실행하기](#🚘로컬-환경에서-설치-실행)
+- [Azure로 배포하기](#🚘Azure-Portal로-배포하기)
+- [팀 멤버](#🚘Team)
+
+
+
+
+
+# 🚘개발 배경
+
+### ✍️왜 Azure Service를 썼을까요?
+
+해커런에서 클라우드 스킬을 배우며 설정한 **Team: KING**의 개발 목표는 다음과 같습니다.
+
+```
+Azure Service를 활용하여 유용한 앱을 만들고,
+Azure Static Web Apss를 통해 편리하게 배포해보자!
+```
+
+- `Azure Bot Service`를 이용해 운전면허 Q&A 챗봇 서비스를 개발했습니다.
+- 개발 과정에서 `Microsoft Docs`의 문서와 `sample GitHub Repository`를 적극 참고했습니다.
+- 완성된 챗봇을 `Vue.js` 프로젝트에 삽입하여, 웹 환경에서 실행되는 챗봇을 구현했습니다.
+- 마지막으로, 빌드 및 배포는 `Azure Static Web Apps와 GitHub Actions`를 통해 자동화했습니다.
+- 즉, MGM 프로젝트는 이 저장소에 새 버전이 나올 때마다 웹으로 자동적으로 배포됩니다! 👏
+
+
+
+### ✍️왜 운전면허 Q&A 서비스를 만들었나요?
+
+- 팀원들이 운전면허를 취득하는 과정에서 다양한 궁금증이 발생했던 일화가 있었습니다.
+- 국가시험이라 상황마다 필요한 준비물이나 합격 조건 등이 다양했기 때문입니다.
+- 그렇기에, 사용자가 편히 쓸 수 있는 `챗봇`을 활용한 Q&A 서비스를 개발했습니다.
+
+
+
+### ✍️MGM 서비스는 어떤 특징이 있나요?
+
+- 챗봇을 시작하면, 카테고리 형식으로 가장 중요한 정보를 출력합니다.
+- 시험을 응시할 지역을 선택하면, 해당 지역의 시험장을 슬라이드 형식으로 출력합니다.
+- 입력창에 질문을 쓰면, 적절한 대답을 출력합니다. 
+- 예를 들어, 아래처럼 질문해보세요! 🤗
+  - 서울에 있는 시험장 어디야?
+  - 학과시험 수수료 얼마야?
+  - 스쿠터 면허는 어떤 종류야?
+  - 기능시험 실격 기준이 뭐야?
+
+
+
+## 🚘사용 기술 & 개발 환경
 
 #### 기술 스택
 
 - [Azure Static Web Apps](https://aka.ms/hackalearn/aswa/intro)
+- [Azure Bot Service](https://azure.microsoft.com/ko-kr/services/bot-services/)
 - [Bot Framework v4 SDK Templates for Visual Studio](https://marketplace.visualstudio.com/items?itemName=BotBuilder.botbuilderv4)
 - [GitHub Actions](https://aka.ms/hackalearn/gha/intro)
 - [C# .NET core](https://dotnet.microsoft.com/download?WT.mc_id=dotnet-33677)
@@ -25,7 +78,7 @@
 
 
 
-## 실행 방법
+## 🚘실행 방법
 
 ### 개발 도구 세팅 확인
 
@@ -44,7 +97,7 @@
 
 
 
-## 로컬 환경에서 설치 & 실행
+## 🚘로컬 환경에서 설치 & 실행
 
 #### 아래 사항이 준비되었는지 확인해주세요.
 
@@ -96,13 +149,13 @@ npm run serve
 
 
 
-## Azure Portal로 배포하기
+## 🚘Azure Portal로 배포하기
 
 [HowToDeployAzure.md](/HowToDeployAzure.md) 문서에서 확인할 수 있습니다😄
 
 
 
-## Team
+## 🚘Team
 
 **[Team: KING](https://github.com/devrel-kr/HackaLearn/blob/main/teams/KING.md)**
 
