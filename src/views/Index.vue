@@ -1,16 +1,27 @@
 <template>
   <div class="wrapper">
-    <parallax class="page-header header-filter" :style="headerStyle">
+
+    <parallax class="header-small" :style="headerStyle">
       <div class="md-layout">
         <div class="md-layout-item">
-            <div class="brand">
-              <h1>면</h1>허에 대해 <h1>궁</h1>금한 것을 <h1>물</h1>어보세요
-<!--              <h1>면 궁 물</h1> 에에-->
-              <h3>운전면허 궁금증 해결 챗봇 서비스</h3>
-            </div>
+          <div class="brand">
+            <h1>.</h1>
+          </div>
         </div>
       </div>
     </parallax>
+
+
+<!--    <parallax class="header-small header-filter" :style="headerStyle">-->
+<!--      <div class="md-layout">-->
+<!--        <div class="md-layout-item">-->
+<!--          <div class="brand">-->
+<!--            <h1>.</h1>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </parallax>-->
+
     <div class="main main-raised">
       <div class="section section-basic">
         <div class="container">
@@ -112,7 +123,6 @@ export default {
 };
 </script>
 <style lang="scss">
-
 div {
   font-weight: bold;
   font-size: 20px;

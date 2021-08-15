@@ -1,4 +1,5 @@
 <template>
+
   <md-toolbar
     id="toolbar"
     md-elevation="0"
@@ -230,3 +231,6 @@ export default {
   }
 };
 </script>
+
+<style>
+</style>
