@@ -169,7 +169,7 @@ namespace MGMbot.Dialog
         {
             string latitudeStr = latitude.ToString();
             string longitudeStr = longitude.ToString();
-            return $"http://maps.google.com/maps/api/staticmap?center={ latitudeStr },{ longitudeStr}&zoom=16&size=512x512&maptype=roadmap&markers=color:red%7C{ latitudeStr },{ longitudeStr }&sensor=false&key=AIzaSyCUGkyf6nzMobitlUprUzDNIqb2GTDj2lk";
+            return $"http://maps.google.com/maps/api/staticmap?center={ latitudeStr },{ longitudeStr}&zoom=16&size=512x512&maptype=roadmap&markers=color:red%7C{ latitudeStr },{ longitudeStr }&sensor=false&key=AIzaSyBylJ1x2wJ6UWGsoELJB80ZK6TOKehe0wo";
         }
 
 

@@ -45,7 +45,7 @@ namespace MGMbot.Dialog
         {
             // print following text on chatting box
             await stepContext.Context.SendActivityAsync(MessageFactory.Text($"안녕하세요, MGM 챗봇 서비스입니다.\r\n" +
-                        $"운전면허에 대해 궁금하신 내용을 질문해주세요."), cancellationToken);
+                        $"운전면허시험에 대해 궁금하신 내용을 질문해주세요."), cancellationToken);
 
             // HeroCard for menu bar
             var card = new HeroCard
