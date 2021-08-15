@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
 
-    <parallax class="header-small" :style="headerStyle">
+    <parallax class="MGM-header" :style="headerStyle">
       <div class="md-layout">
         <div class="md-layout-item">
           <div class="brand">
@@ -133,7 +133,7 @@ p {
 }
 
 .MGM-header{
-  height: 20px;
+  padding:15px;
 }
 
 .section-download {
