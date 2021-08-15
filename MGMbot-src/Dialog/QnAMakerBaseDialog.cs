@@ -25,11 +25,6 @@ namespace MGMbot.Dialog
         private readonly IBotServices _services;
         private readonly IConfiguration _configuration;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QnAMakerBaseDialog"/> class.
-        /// Dialog helper to generate dialogs.
-        /// </summary>
-        /// <param name="services">Bot Services.</param>
         public QnAMakerBaseDialog(IBotServices services, IConfiguration configuration) : base()
         {
             this._services = services;
