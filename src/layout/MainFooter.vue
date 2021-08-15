@@ -20,7 +20,7 @@
         </ul>
       </nav>
       <p class="copyright">
-        <md-icon>computer</md-icon> {{ year }}, made by
+        <md-icon>toys</md-icon> 2021.08 , made by
         <a href="https://github.com/devrel-kr/HackaLearn/blob/main/teams/KING.md" target="_blank">Team: KING</a>
       </p>
     </div>
@@ -34,7 +34,6 @@ export default {
   },
   data() {
     return {
-      year: new Date().getFullYear()
     };
   }
 };

@@ -9,7 +9,7 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">MGM - 운전면허 궁금증 해결 챗봇 서비스</h3>
+        <h3 class="md-title">MGM - 운전면허시험 궁금증 해결 챗봇 서비스</h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
