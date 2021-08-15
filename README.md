@@ -2,7 +2,7 @@
 
 ![mgm-banner](Challenge/MGM-Banner.png)
 
-- https://brave-tree-0cbae0d10.azurestaticapps.net/
+- Demo Page: https://brave-tree-0cbae0d10.azurestaticapps.net/
 - [HackaLearn x Korea 2021](https://github.com/devrel-kr/HackaLearn) 참가 작품
 
 
@@ -29,7 +29,7 @@
 
 ### 개발 도구 세팅 확인
 
-개발, 실행, 배포하기 위해 아래 개발 도구 설치가 필요합니다.
+프로젝트를 개발, 확인하기 위해 아래 항목의 설치가 필요합니다.
 
 [HackaLearn에서 제공하는 개발 도구 리스트](https://github.com/devrel-kr/HackaLearn/tree/main/tools)를 참고해주세요.
 

@@ -1,6 +1,6 @@
 # Azure Portal로 배포하기
 
-본 프로젝트는 [Azure Static Web Apps](https://aka.ms/hackalearn/aswa/intro)를 통해 배포되었습니다.
+**본 프로젝트는 [Azure Static Web Apps](https://aka.ms/hackalearn/aswa/intro)를 통해 배포되었습니다.**
 
 배포하기 전에 아래 사항들이 준비되었는지 확인해주세요.
 
@@ -8,10 +8,13 @@
 
 ## 사전 준비 사항
 
-- [Azure Trial 이상의 구독을 가진 Azure 계정](https://azure.microsoft.com/ko-kr/free/)
-- [MGM 프로젝트 저장소](https://github.com/solidcellaMoon/MGMbot-HackaLearnXKorea2021)를 `fork`한 Github Repository
+- **[Azure Trial 이상의 구독을 가진 Azure 계정](https://azure.microsoft.com/ko-kr/free/)**
+- **[MGM 프로젝트 저장소](https://github.com/solidcellaMoon/MGMbot-HackaLearnXKorea2021)를 `fork`한 Github Repository**
   - `fork`한 저장소의 링크는 아래의 형식과 같습니다.
-  - `https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021`
+
+```
+https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021
+```
 
 
 
