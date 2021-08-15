@@ -9,7 +9,7 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">MGM - 운전면허시험 Q&A 챗봇 서비스</h3>
+        <h3 class="MGM-title">MGM - 운전면허시험 Q&A 챗봇 서비스</h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -233,4 +233,15 @@ export default {
 </script>
 
 <style>
+  @font-face {
+      font-family: 'SLEIGothicTTF';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  .MGM-title{
+    font-family: 'SLEIGothicTTF', sans-serif;
+    padding-bottom: 15px;
+  }
 </style>

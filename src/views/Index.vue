@@ -132,6 +132,10 @@ p {
   font-weight: normal;
 }
 
+.MGM-header{
+  height: 20px;
+}
+
 .section-download {
   .md-button + .md-button {
     margin-left: 5px;
