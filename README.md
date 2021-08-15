@@ -49,7 +49,8 @@
 #### 아래 사항이 준비되었는지 확인해주세요.
 
 - **[MGM 프로젝트 저장소](https://github.com/solidcellaMoon/MGMbot-HackaLearnXKorea2021)를 `fork`한 Github Repository**
-  - `fork`한 저장소의 링크는 아래의 형식과 같습니다.
+
+  `fork`한 저장소의 링크는 아래의 형식과 같습니다.
 
 ```
 https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021
@@ -57,19 +58,19 @@ https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021
 
 - **최신 버전의 [Node.js](https://nodejs.org/ko/download/)**
 
-  - cmd창에서 npm 명령어가 정상적으로 실행되어야 합니다.
+  cmd창에서 npm 명령어가 정상적으로 실행되어야 합니다.
 
-  
+---
 
 ### 프로젝트 받기 & 환경 설정
 
-`git clone`으로 저장소를 받아옵니다.
+1. `git clone`으로 저장소를 받아옵니다.
 
 ```
 git clone https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021.git
 ```
 
-저장소를 불러온 폴더로 이동합니다. 
+2. 저장소를 불러온 폴더로 이동합니다. 
 
 `clone` 명령어를 실행한 폴더에 `MGMbot-HackaLearnXKorea2021` 라는 이름의 폴더가 생성될 것입니다.
 
@@ -77,7 +78,7 @@ git clone https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2
 cd MGMbot-HackaLearnXKorea2021
 ```
 
-실행, 빌드를 위해 `npm`을 설치합니다.
+3. 실행, 빌드를 위해 `npm`을 설치합니다.
 
 ```
 npm install

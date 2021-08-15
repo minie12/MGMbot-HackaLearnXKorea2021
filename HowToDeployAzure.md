@@ -9,8 +9,10 @@
 ## 사전 준비 사항
 
 - **[Azure Trial 이상의 구독을 가진 Azure 계정](https://azure.microsoft.com/ko-kr/free/)**
+
 - **[MGM 프로젝트 저장소](https://github.com/solidcellaMoon/MGMbot-HackaLearnXKorea2021)를 `fork`한 Github Repository**
-  - `fork`한 저장소의 링크는 아래의 형식과 같습니다.
+
+  `fork`한 저장소의 링크는 아래의 형식과 같습니다.
 
 ```
 https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021
@@ -27,9 +29,7 @@ https://github.com/본인의 Github 아이디/MGMbot-HackaLearnXKorea2021
 
 3. 검색창에서 `Static Web App`을 입력하여 클릭하고, `만들기` 버튼을 눌러 리소스를 생성합니다.
 
-   ![step 2](Challenge/dep2.PNG)
-
-![step 3](Challenge/dep3.PNG)
+   ![step 2](Challenge/dep2.PNG)![step 3](Challenge/dep3.PNG)
 
 4. 아래 기본 입력 사항을 확인 바랍니다.
    - `구독`: [Azure Trial](https://azure.microsoft.com/ko-kr/free/) 이상의 권한 (학생용도 가능합니다.)
