@@ -3,6 +3,7 @@
 ![mgm-banner](Challenge/MGM-Banner.png)
 
 - [HackaLearn x Korea 2021](https://github.com/devrel-kr/HackaLearn) 참가 작품
+- 🏅[가장 창의적인 애플리케이션 부문 수상](https://github.com/devrel-kr/HackaLearn#-hackalearn-%EC%88%98%EC%83%81%EC%9E%90-%EB%B0%8F-%EC%88%98%EC%83%81%ED%8C%80)
 - **Demo Page:** https://brave-tree-0cbae0d10.azurestaticapps.net/
 - **Demo Video:** https://youtu.be/f7-GkbOhVGE
 
