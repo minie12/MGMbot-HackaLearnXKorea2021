@@ -1,4 +1,5 @@
 <template>
+
   <md-toolbar
     id="toolbar"
     md-elevation="0"
@@ -8,7 +9,7 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">MGM - 운전면허 궁금증 해결 챗봇 서비스</h3>
+        <h3 class="MGM-title">MGM - 운전면허시험 Q&A 챗봇 서비스</h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -107,11 +108,11 @@
               </md-list-item>
 
               <md-list-item
-                  href="https://www.youtube.com/"
+                  href="https://youtu.be/f7-GkbOhVGE"
                   target="_blank"
               >
                 <i class="fab fa-youtube"></i>
-                <p>youtube</p>
+                <p>Demo Video</p>
                 <md-tooltip md-direction="bottom"
                 >시연 영상</md-tooltip
                 >
@@ -230,3 +231,17 @@ export default {
   }
 };
 </script>
+
+<style>
+  @font-face {
+      font-family: 'SLEIGothicTTF';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  .MGM-title{
+    font-family: 'SLEIGothicTTF', sans-serif;
+    padding-bottom: 15px;
+  }
+</style>

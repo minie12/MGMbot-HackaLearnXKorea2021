@@ -14,19 +14,6 @@ namespace MGMbot.Bots
 {
     public class QnABot<T> : ActivityHandler where T : Microsoft.Bot.Builder.Dialogs.Dialog
     {
-
-        // 봇 시작할때 카드 출력하기
-        HeroCard card = new HeroCard
-        {
-            Images = new List<CardImage> { new CardImage("http://drive.google.com/uc?export=view&id=1HrqzgfF6SQTE13NkKn-hLLeRqA389q-_") },
-            Buttons = new List<CardAction>()
-                {
-                    new CardAction(ActionTypes.ImBack, title: "시험장", value: "시험장"),
-                    new CardAction(ActionTypes.ImBack, title: "안전운전 통합민원 사이트", value: "안전운전 웹사이트"),
-                    new CardAction(ActionTypes.ImBack, title: "QnA 사용 방법", value: "QnA 사용 방법")
-                },
-        };
-
         protected readonly BotState ConversationState;
         protected readonly Microsoft.Bot.Builder.Dialogs.Dialog Dialog;
         protected readonly BotState UserState;
@@ -47,41 +34,20 @@ namespace MGMbot.Bots
             await UserState.SaveChangesAsync(turnContext, false, cancellationToken);
         }
 
-        // d예아`~~!!@!@
-        protected async Task printMenu(ITurnContext turnContext, CancellationToken cancellationToken)
-        {
-            var attachments = new List<Attachment>();
-            var reply = MessageFactory.Attachment(attachments);
-            reply.Attachments.Add(card.ToAttachment());
-            await turnContext.SendActivityAsync(reply, cancellationToken);
-        }
-
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            /*var replyText = $"{turnContext.Activity.Text}";
-            if (replyText == $"메뉴")
-            {
-                await printMenu(turnContext, cancellationToken);
-            }
-            else
-            {*/
-                // Run the Dialog with the new message Activity.
+            // Run the Dialog with the new message Activity.
             await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
-            //}
         }
 
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
         {
-            // 봇 시작할때 카드 출력하기
             foreach (var member in membersAdded)
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    //await turnContext.SendActivityAsync(MessageFactory.Text($"안녕하세요, MGM 챗봇 서비스입니다.\r\n" + $"운전면허에 대해 궁금하신 내용을 질문해주세요."), cancellationToken);
-                    
-                    // 바로 메뉴 띄우기
+                    // Go to RootDialog
                     await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
-                    //await printMenu(turnContext, cancellationToken);
                 }
             }
         }

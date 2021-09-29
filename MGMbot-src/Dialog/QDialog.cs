@@ -6,24 +6,16 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.AI.QnA.Dialogs;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
 using Microsoft.Bot.Builder;
-using Microsoft.Bot.Builder.Dialogs.Choices;
-using Microsoft.Bot.Schema;
-using Microsoft.Extensions.Logging;
+
 
 namespace MGMbot.Dialog
 {
     /// <summary>
-    /// This is an example root dialog. Replace this with your applications.
+    /// This is an QnA Dialog. Gets prompt from user and find answer from QnA Maker.
     /// </summary>
     public class QDialog : ComponentDialog
     {
-        /// <summary>
-        /// QnA Maker Component dialog
-        /// </summary>
-
-        /// <param name="services">Bot Services.</param>
         public QDialog(IBotServices services, IConfiguration configuration)
         {
             AddDialog(new QnAMakerBaseDialog(services, configuration));
@@ -36,14 +28,13 @@ namespace MGMbot.Dialog
                ReturnStepAsync,
             }));
 
-            // AddDialog(new WaterfallDialog(InitialDialog).AddStep(InitialStepAsync));
-
             // The initial child Dialog to run.
             InitialDialogId = nameof(WaterfallDialog);
         }
 
         private async Task<DialogTurnResult> IntroStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
+            // gets prompt from user
             return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = MessageFactory.Text("") }, cancellationToken);
         }
 

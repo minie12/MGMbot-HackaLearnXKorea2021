@@ -1,23 +1,53 @@
 <template>
   <div class="wrapper">
-    <div class="alert alert-warning">
-      <div class="container">
-        <button type="button" aria-hidden="true" class="close" @click="event => removeNotify(event,'alert-warning')">
-          <md-icon>clear</md-icon>
-        </button>
-        <div class="alert-icon">
-          <md-icon>warning</md-icon>
+
+    <div v-if="isMobile">
+
+      <div class="alert alert-warning">
+        <div class="container">
+          <button type="button" aria-hidden="true" class="close" @click="event => removeNotify(event,'alert-warning')">
+            <md-icon>clear</md-icon>
+          </button>
+          <div class="alert-icon">
+            <md-icon>warning</md-icon>
+          </div>
+          <b> 해상도 최적화 </b>
+          <p>
+            : 이 페이지는 PC 화면에 최적화 되어있습니다! <br>
+            모바일에서는 화면이 일부 겹쳐보일 수 있습니다.
+          </p>
         </div>
-        <b> 해상도 최적화 </b>
-        <p>
-            : 이 페이지는 PC 화면에 최적화 되어있습니다!
-            모바일에서는 화면 배치가 일부 맞지 않는 점 양해 바랍니다.
-        </p>
       </div>
-    </div>
+        <iframe
+            src='https://webchat.botframework.com/embed/MGMbot?s=1yJdze_CsLw.L2e0hOiGvlXoX9kkxVP-mNjjA9Wsp9uoqYyRVP89Hdc'
+            style='min-width: 200px; width: 100%; min-height: 600px;'></iframe>
+
+      </div>
+
+    <div v-else>
+
+      <div class="alert alert-success">
+        <div class="container">
+          <button type="button" aria-hidden="true" class="close" @click="event => removeNotify(event,'alert-success')">
+            <md-icon>clear</md-icon>
+          </button>
+          <div class="alert-icon">
+            <md-icon>toys</md-icon>
+          </div>
+          안녕하세요! MGM 서비스입니다.
+          <p>
+            운전면허 시험에 대해 궁금한 것을 질문해주세요!
+          </p>
+        </div>
+      </div>
+
       <iframe
           src='https://webchat.botframework.com/embed/MGMbot?s=1yJdze_CsLw.L2e0hOiGvlXoX9kkxVP-mNjjA9Wsp9uoqYyRVP89Hdc'
           style='min-width: 200px; width: 100%; min-height: 800px;'></iframe>
+
+    </div>
+
+
   </div>
 </template>
 
@@ -36,10 +66,14 @@ export default {
         target = target.parentNode;
       }
       return target.parentNode.removeChild(target);
+    },
+    onResize(){
+      this.isMobile = window.innerWidth < 600
     }
   },
   data() {
     return {
+      isMobile: false,
       defaultPagination: 3,
       infoPagination: 3,
       initial: null,
@@ -64,7 +98,16 @@ export default {
         rangeSlider: [20, 60]
       }
     };
-  }
+  },
+  beforeDestroy() {
+    if(typeof window !== 'undefined'){
+      window.removeEventListener('resize', this.onResize, {passive: true})
+    }
+  },
+  mounted() {
+    this.onResize()
+    window.addEventListener('resize', this.onResize, {passive: true})
+  },
 };
 </script>
 
